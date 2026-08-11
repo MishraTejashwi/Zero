@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050506" />
+  <meta name="description" content="SCALABLE UI — a cinematic frontend framework experience for Unreal Engine 5.6." />
+  <title>SCALABLE UI — Unreal Engine Frontend Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="enhancements.css" />
+</head>
+<body>
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot__core">
+      <div class="boot__mark"><span></span><span></span><span></span></div>
+      <p class="eyebrow">SCALABLE UI / SYSTEM BOOT</p>
+      <div class="boot__line"><i id="bootLine"></i></div>
+      <p class="boot__status" id="bootStatus">Initializing interface...</p>
+    </div>
+  </div>
+
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+  <header class="topbar glass">
+    <a class="brand magnetic" href="#hero" aria-label="SCALABLE UI home">
+      <span class="brand__cube" aria-hidden="true"></span>
+      <span>SCALABLE UI</span>
+    </a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="magnetic" href="#architecture">Architecture</a>
+      <a class="magnetic" href="#components">Components</a>
+      <a class="magnetic" href="#lab">Lab</a>
+    </nav>
+    <button class="pill magnetic" data-scroll="#lab">Launch Lab <span>↗</span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="hero__frame frame-corners">
+        <div class="status-chip glass reveal" data-parallax="0.12">
+          <span class="online-dot"></span>
+          <div><b>SYSTEM ONLINE</b><small>v1.0.0 / UE 5.6</small></div>
+        </div>
+        <div class="time-chip glass reveal" data-parallax="-0.1">
+          <small>LOCAL INTERFACE TIME</small><b id="clock">00 : 00 : 00</b><span>UTC +05:30</span>
+        </div>
+
+        <aside class="module-panel glass tilt-card reveal" data-tilt="10">
+          <p class="panel-label">CORE MODULES</p>
+          <button class="module-row active"><span>01</span> Navigation <i>↗</i></button>
+          <button class="module-row"><span>02</span> Widgets <i>↗</i></button>
+          <button class="module-row"><span>03</span> Animation <i>↗</i></button>
+          <button class="module-row"><span>04</span> Data System <i>↗</i></button>
+          <button class="module-row"><span>05</span> Events <i>↗</i></button>
+          <button class="module-row"><span>06</span> Styling <i>↗</i></button>
+        </aside>
+
+        <div class="hero__content reveal" data-parallax="0.04">
+          <div class="hero__sigil" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="eyebrow">FRONTEND FRAMEWORK FOR <strong>UNREAL ENGINE 5.6</strong></p>
+          <h1 class="hero__title">SCALABLE UI</h1>
+          <div class="hero__motto"><span>BUILD</span><i></i><span>CONNECT</span><i></i><span>SCALE</span></div>
+          <p class="hero__copy">A modular, scalable, performance-driven UI framework engineered for modern Unreal Engine projects.</p>
+          <button class="primary magnetic" data-scroll="#architecture"><span>Explore Framework</span><b>↘</b></button>
+        </div>
+
+        <aside class="demo-panel glass tilt-card reveal" data-tilt="-10">
+          <div class="panel-heading"><span class="online-dot"></span><b>ANIMATED BUTTON</b></div>
+          <div class="button-demo">
+            <div class="demo-rings"><i></i><i></i><i></i></div>
+            <button class="pulse-button magnetic">HOVER ME</button>
+          </div>
+          <pre><code><span>SUIButton*</span> Button =
+CreateWidget&lt;SUIButton&gt;(...);
+Button-&gt;SetAnimation(
+  ESUIButtonAnim::HoverGlow
+);</code></pre>
+          <button class="text-link">View component <span>→</span></button>
+        </aside>
+
+        <div class="hero__depth" aria-hidden="true">
+          <div class="depth-line l1"></div><div class="depth-line l2"></div><div class="depth-line l3"></div><div class="depth-line l4"></div>
+        </div>
+        <div class="scroll-cue"><span>SCROLL TO EXPLORE</span><i></i></div>
+      </div>
+    </section>
+
+    <section class="architecture section" id="architecture">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 / SYSTEM ARCHITECTURE</p>
+        <h2>Built as a system.<br><span>Not a pile of widgets.</span></h2>
+        <p>Move across the nodes. The architecture isolates responsibility, keeps communication explicit, and lets projects grow without UI logic collapsing into itself.</p>
+      </div>
+      <div class="architecture-stage reveal" id="architectureStage">
+        <svg class="architecture-lines" viewBox="0 0 1000 650" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M500,325 C410,260 330,205 235,155" /><path d="M500,325 C590,260 670,205 765,155" />
+          <path d="M500,325 C410,390 330,445 235,495" /><path d="M500,325 C590,390 670,445 765,495" />
+          <path d="M235,155 C205,250 205,400 235,495" /><path d="M765,155 C795,250 795,400 765,495" />
+        </svg>
+        <button class="arch-node core" data-node="core"><small>ROOT</small><strong>SCALABLE UI</strong><span>Framework Kernel</span></button>
+        <button class="arch-node n1" data-node="navigation"><small>MODULE 01</small><strong>Navigation</strong><span>Routes + Focus</span></button>
+        <button class="arch-node n2" data-node="state"><small>MODULE 02</small><strong>State</strong><span>Reactive Data</span></button>
+        <button class="arch-node n3" data-node="widgets"><small>MODULE 03</small><strong>Widgets</strong><span>Reusable Views</span></button>
+        <button class="arch-node n4" data-node="events"><small>MODULE 04</small><strong>Events</strong><span>Loose Coupling</span></button>
+        <div class="arch-detail glass" id="archDetail" aria-live="polite">
+          <small>INSPECTING / CORE</small><h3>Framework Kernel</h3><p>The central orchestration layer keeps modules independent while exposing a predictable interface to the game.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="components section" id="components">
+      <div class="section-head reveal">
+        <p class="eyebrow">02 / INTERACTIVE COMPONENTS</p>
+        <h2>Every component has<br><span>behavior built in.</span></h2>
+      </div>
+      <div class="component-stack" id="componentStack">
+        <article class="component-card glass reveal" data-index="01"><div class="component-meta"><span>01</span><small>INPUT / NAVIGATION</small></div><h3>Focus Navigation</h3><p>Controller-ready navigation with explicit focus state, directional rules and transition hooks.</p><div class="component-visual nav-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div></article>
+        <article class="component-card glass reveal" data-index="02"><div class="component-meta"><span>02</span><small>ANIMATION / MOTION</small></div><h3>Motion System</h3><p>Reusable motion presets with springs, easing and timeline-driven state changes.</p><div class="component-visual motion-visual" aria-hidden="true"><i></i><i></i><i></i></div></article>
+        <article class="component-card glass reveal" data-index="03"><div class="component-meta"><span>03</span><small>EVENT / SIGNAL</small></div><h3>Event Routing</h3><p>Keep widgets decoupled with deliberate event paths instead of direct references everywhere.</p><div class="component-visual event-visual" aria-hidden="true"><i></i><i></i><i></i><i></i><span></span></div></article>
+      </div>
+    </section>
+
+    <section class="lab section" id="lab">
+      <div class="section-head reveal"><p class="eyebrow">03 / INTERFACE LAB</p><h2>Don’t read about it.<br><span>Touch it.</span></h2><p>Change the live UI parameters and feel how the system behaves.</p></div>
+      <div class="lab-shell glass reveal" id="labShell">
+        <aside class="lab-sidebar"><p class="panel-label">COMPONENTS</p><button class="lab-item active" data-component="button"><span>01</span> Button</button><button class="lab-item" data-component="modal"><span>02</span> Modal</button><button class="lab-item" data-component="hud"><span>03</span> HUD</button></aside>
+        <div class="lab-preview"><div class="preview-grid" aria-hidden="true"></div><div class="preview-status"><span class="online-dot"></span> LIVE PREVIEW</div><div class="preview-object" id="previewObject"><button class="lab-demo-button pulse-enabled"><span>LAUNCH SYSTEM</span><i>↗</i></button></div></div>
+        <aside class="lab-properties"><p class="panel-label">PROPERTIES</p><label>Motion<select id="motionSelect"><option value="spring">Spring</option><option value="smooth">Smooth</option><option value="snappy">Snappy</option></select></label><label>Intensity <output id="intensityValue">72</output><input id="intensity" type="range" min="10" max="100" value="72" /></label><label>Scale <output id="scaleValue">1.06</output><input id="scale" type="range" min="100" max="120" value="106" /></label><label class="switch-row"><span>Pulse field</span><input id="pulseToggle" type="checkbox" checked /></label><button class="secondary magnetic" id="replayMotion">Replay Motion <span>↻</span></button></aside>
+      </div>
+    </section>
+
+    <section class="finale section" id="finale"><div class="finale__grid" aria-hidden="true"></div><div class="finale__content reveal"><p class="eyebrow">SYSTEM READY</p><h2>BUILD INTERFACES<br><span>THAT SCALE.</span></h2><p>One framework. Predictable architecture. UI that still feels alive.</p><div class="finale__actions"><button class="primary magnetic" data-scroll="#hero">Return to Core <b>↑</b></button><a class="secondary magnetic" href="https://github.com/MishraTejashwi/Zero" target="_blank" rel="noreferrer">View GitHub <span>↗</span></a></div></div></section>
+  </main>
+
+  <div class="hud-bottom"><button class="hud-button magnetic" id="soundToggle" aria-pressed="false"><span>SOUND</span><b>OFF</b></button><div class="hud-coordinates"><span id="coordX">X 0000</span><span id="coordY">Y 0000</span></div><button class="hud-button magnetic" id="debugToggle" aria-pressed="false"><span>DEBUG</span><b>OFF</b></button></div>
+  <div class="debug-grid" id="debugGrid" aria-hidden="true"></div>
+  <div class="command-overlay" id="commandOverlay" aria-hidden="true"><div class="command glass"><small>SCALABLE UI / COMMAND</small><input id="commandInput" autocomplete="off" placeholder="Type a command..." aria-label="Command palette" /><div class="command-list"><button data-command="architecture"><span>01</span> Open Architecture <kbd>A</kbd></button><button data-command="components"><span>02</span> Inspect Components <kbd>C</kbd></button><button data-command="lab"><span>03</span> Launch Interface Lab <kbd>L</kbd></button><button data-command="debug"><span>04</span> Toggle Debug Grid <kbd>D</kbd></button></div><small class="command-hint">ESC to close · CTRL/CMD + K to open</small></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
